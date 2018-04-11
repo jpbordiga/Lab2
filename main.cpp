@@ -1,6 +1,8 @@
 #include <iostream>
 #include "Process.hpp"
 
+using namespace std;
+
 int main() {
 	
 	std::string fileName = "trace1.txt";
@@ -9,7 +11,7 @@ int main() {
 
 	p->Run();
 
-	delete p;
+	p->~Process();
 
 	return 0;
 

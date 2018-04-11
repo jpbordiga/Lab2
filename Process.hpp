@@ -16,7 +16,7 @@ public:
 	Process operator=(Process &&orig) = delete;
 	virtual ~Process() {
 	
-		// delete process
+		iF.close();
 	
 	}
 

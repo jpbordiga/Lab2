@@ -66,8 +66,6 @@ void Process::Run() {
 		}
 	}
 
-	iF.close();
-
 }
 
 void Process::specifyMemSize(std::istringstream &sS, std::vector<uint8_t> mem) {
