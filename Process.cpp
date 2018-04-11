@@ -6,7 +6,7 @@
 #include <cstdio>
 #include <vector>
 #include <iomanip>
-#include "Process.hpp"
+#include "Process.h"
 
 Process::Process(const std::string &traceFileName) {
 
