@@ -12,24 +12,27 @@ Process::Process(const std::string &traceFileName) {
 
 	std::cout << "1\n";
 
-	std::ifstream iF(traceFileName, std::ios::in);
+	//iF = new std::ifstream();
 
 	std::cout << "2\n";
 
-	if (iF.fail()) {
+	iF.open(traceFileName);
 
-		std::cout << "FAIL\n";
-		std::runtime_error("Error: failed to associate fstream");
+	std::cout << iF.is_open() << "\n";
+
+	if (iF.fail()) {
+		//std::cout << "FAIL\n";
+		throw std::runtime_error("ERROR: file not found: " + traceFileName);
 	} else {
-		std::cout << "3\n";
-		run(iF);
+		std::cout << "4\n";
+		
 	}
 
-	iF.close();
+	
 
 }
 
-void Process::run(std::ifstream &iF) {
+void Process::Run() {
 	
 	std::vector<uint8_t> commandMemory;
 	std::string currentLine;
@@ -62,6 +65,9 @@ void Process::run(std::ifstream &iF) {
 
 		}
 	}
+
+	iF.close();
+
 }
 
 void Process::specifyMemSize(std::istringstream &sS, std::vector<uint8_t> mem) {

@@ -3,8 +3,10 @@
 
 #include <string>
 #include <vector>
+#include <fstream>
 
 class Process {
+
 public:
 
 	Process(const std::string &traceFileName);
@@ -18,7 +20,7 @@ public:
 	
 	}
 
-	void run(std::ifstream &iF);
+	void Run();
 	void specifyMemSize(std::istringstream &sS, std::vector<uint8_t> mem);
 	void findDifferentBytes(std::istringstream &sS, std::vector<uint8_t> mem);
 	void storeBytes(std::istringstream &sS, std::vector<uint8_t> mem);
@@ -27,6 +29,8 @@ public:
 	void printBytes(std::istringstream &sS, std::vector<uint8_t> mem);
 
 private:
+
+	std::ifstream iF;
 
 };
 

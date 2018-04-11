@@ -7,6 +7,8 @@ int main() {
 
 	Process *p = new Process(fileName);
 
+	p->Run();
+
 	delete p;
 
 	return 0;
